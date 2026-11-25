@@ -1,0 +1,13 @@
+Pipeline output,TCGA (discovery),GSE37745 (independent replication)
+Samples (LUAD / LUSC),"1,017 (515 / 502)",172 (106 / 66)
+Platform,RNA-seq (Illumina HiSeq),Microarray (Affymetrix GPL570)
+Best model (7-model comparison),LogisticRegression,LogisticRegression
+Final accuracy (30 splits),95.69% ± 1.73%,95.19% ± 4.48%
+Final AUC (30 splits),0.9884 ± 0.0080,0.9844 ± 0.0297
+Core-stable SHAP genes,15,12
+Core genes that are established markers,12/15,7/12
+Core-stable genes shared with TCGA,—,"6/13 (CLCA2, DSC3, KRT5, KRT6A, S100A7, SERPINB13); permutation p = 0.0001"
+TCGA core genes in GSE top 1% of SHAP,—,10/13
+Stage-associated core genes (p<0.05),11/15,1/12 (GSE core); 1/13 (TCGA core)
+Univariate survival-significant genes,"KRT6A, DSG3, KRT6C",none
+Cox-significant after FDR,0/6,0/8

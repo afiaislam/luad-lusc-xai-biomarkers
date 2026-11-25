@@ -1,0 +1,58 @@
+=== 0. Reproduction check: test results vs the original notebook run ===
+Compared 140 model-split results with results_final_pipeline\model_comparison_raw.csv
+Identical test accuracy: 124/140; largest difference: 0.0490
+Largest difference per model: {'AdaBoost': 0.0, 'CNN (Conv1D)': 0.049, 'LightGBM': 0.0, 'LinearSVM': 0.0, 'LogisticRegression': 0.0, 'RandomForest': 0.0, 'XGBoost': 0.0}
+
+=== Mean over 20 splits, sorted by VALIDATION accuracy ===
+                    Val_Acc  Val_AUC  Test_Acc  Test_Acc_SD  Test_AUC  Test_AUC_SD
+Model                                                                             
+XGBoost              0.9564   0.9906    0.9574       0.0209    0.9921       0.0084
+AdaBoost             0.9559   0.9889    0.9588       0.0164    0.9924       0.0090
+LogisticRegression   0.9525   0.9883    0.9593       0.0175    0.9906       0.0091
+LinearSVM            0.9520   0.9882    0.9574       0.0194    0.9909       0.0090
+LightGBM             0.9500   0.9902    0.9446       0.0267    0.9862       0.0111
+CNN (Conv1D)         0.9490   0.9885    0.9480       0.0194    0.9880       0.0093
+RandomForest         0.9471   0.9841    0.9515       0.0167    0.9864       0.0081
+
+Selected by validation accuracy: XGBoost
+(Note: XGBoost, LightGBM and the CNN also used the validation set for early stopping.)
+
+=== Per-split selection (best validation accuracy in each split, scored on its test set) ===
+Test accuracy: 95.54 +- 1.97%  | Test AUC: 0.9888 +- 0.0116
+Times each model was picked: {'AdaBoost': 5, 'XGBoost': 4, 'LogisticRegression': 3, 'LinearSVM': 3, 'CNN (Conv1D)': 2, 'LightGBM': 2, 'RandomForest': 1}
+
+=== Test_Accuracy: Friedman test over 20 paired splits ===
+chi2 = 21.942, p = 0.001241
+Mean rank (1 = best): {'LogisticRegression': 2.92, 'LinearSVM': 3.45, 'AdaBoost': 3.48, 'XGBoost': 3.52, 'RandomForest': 4.58, 'CNN (Conv1D)': 4.72, 'LightGBM': 5.32}
+Wilcoxon signed-rank, LogisticRegression vs each model (Holm-adjusted p):
+  vs XGBoost        mean diff +0.0020  p = 0.5996  Holm p = 1
+  vs AdaBoost       mean diff +0.0005  p = 0.9496  Holm p = 1
+  vs LinearSVM      mean diff +0.0020  p = 0.3357  Holm p = 1
+  vs LightGBM       mean diff +0.0147  p = 0.008422  Holm p = 0.05053
+  vs CNN (Conv1D)   mean diff +0.0113  p = 0.02244  Holm p = 0.1122
+  vs RandomForest   mean diff +0.0078  p = 0.02528  Holm p = 0.1122
+Wilcoxon signed-rank, XGBoost vs each model (Holm-adjusted p):
+  vs AdaBoost       mean diff -0.0015  p = 0.6478  Holm p = 1
+  vs LogisticRegression mean diff -0.0020  p = 0.5996  Holm p = 1
+  vs LinearSVM      mean diff +0.0000  p = 1  Holm p = 1
+  vs LightGBM       mean diff +0.0127  p = 0.003404  Holm p = 0.02043
+  vs CNN (Conv1D)   mean diff +0.0093  p = 0.02681  Holm p = 0.134
+  vs RandomForest   mean diff +0.0059  p = 0.04765  Holm p = 0.1906
+
+=== Test_AUC: Friedman test over 20 paired splits ===
+chi2 = 38.455, p = 9.154e-07
+Mean rank (1 = best): {'AdaBoost': 2.58, 'XGBoost': 2.85, 'LinearSVM': 3.4, 'LogisticRegression': 3.62, 'LightGBM': 4.88, 'CNN (Conv1D)': 4.97, 'RandomForest': 5.7}
+Wilcoxon signed-rank, LogisticRegression vs each model (Holm-adjusted p):
+  vs XGBoost        mean diff -0.0015  p = 0.1119  Holm p = 0.2238
+  vs AdaBoost       mean diff -0.0018  p = 0.008403  Holm p = 0.04202
+  vs LinearSVM      mean diff -0.0003  p = 0.3651  Holm p = 0.3651
+  vs LightGBM       mean diff +0.0044  p = 0.03947  Holm p = 0.1184
+  vs CNN (Conv1D)   mean diff +0.0026  p = 0.02422  Holm p = 0.09689
+  vs RandomForest   mean diff +0.0042  p = 0.0005378  Holm p = 0.003227
+Wilcoxon signed-rank, XGBoost vs each model (Holm-adjusted p):
+  vs AdaBoost       mean diff -0.0003  p = 0.6475  Holm p = 0.6475
+  vs LogisticRegression mean diff +0.0015  p = 0.1119  Holm p = 0.3357
+  vs LinearSVM      mean diff +0.0012  p = 0.1119  Holm p = 0.3357
+  vs LightGBM       mean diff +0.0059  p = 0.001116  Holm p = 0.005578
+  vs CNN (Conv1D)   mean diff +0.0041  p = 0.001368  Holm p = 0.005578
+  vs RandomForest   mean diff +0.0057  p = 0.0002921  Holm p = 0.001753

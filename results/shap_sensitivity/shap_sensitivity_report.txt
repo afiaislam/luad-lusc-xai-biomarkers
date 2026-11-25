@@ -1,0 +1,44 @@
+=== 1. Reproduction check (resamples 1-20 vs the notebook) ===
+Core set identical to the notebook: True (15 genes here, 15 in the notebook)
+Largest difference in any gene's stability: 0.00
+Baseline core set (R=20, top 20, >=0.8): 15 genes: [np.str_('CALML3'), np.str_('CLCA2'), np.str_('DSC3'), np.str_('DSG3'), np.str_('GSTM1'), np.str_('KRT13'), np.str_('KRT14'), np.str_('KRT5'), np.str_('KRT6A'), np.str_('KRT6B'), np.str_('KRT6C'), np.str_('MUC5B'), np.str_('S100A7'), np.str_('SERPINB13'), np.str_('SPRR2A')]
+
+=== 2. Core-set sensitivity (one setting varied at a time) ===
+    setting  value  n_core_genes  baseline_genes_kept                                       dropped                                                                                                                                     added  jaccard_vs_baseline
+  threshold    0.5            19                   15                                                                                                                                                            LY6D, SPRR1B, SPRR2D, XAGE1D                0.789
+  threshold    0.6            17                   15                                                                                                                                                                            LY6D, SPRR2D                0.882
+  threshold    0.7            16                   15                                                                                                                                                                                  SPRR2D                0.938
+  threshold    0.8            15                   15                                                                                                                                                                                                        1.000
+  threshold    0.9            14                   14                                         MUC5B                                                                                                                                                          0.933
+  threshold    1.0            12                   12                          GSTM1, MUC5B, SPRR2A                                                                                                                                                          0.800
+resamples_R   10.0            16                   15                                                                                                                                                                                    LY6D                0.938
+resamples_R   20.0            15                   15                                                                                                                                                                                                        1.000
+resamples_R   30.0            15                   15                                                                                                                                                                                                        1.000
+resamples_R   40.0            15                   15                                                                                                                                                                                                        1.000
+resamples_R   50.0            15                   15                                                                                                                                                                                                        1.000
+      top_K   10.0             9                    9 CLCA2, GSTM1, KRT13, MUC5B, SERPINB13, SPRR2A                                                                                                                                                          0.600
+      top_K   15.0            14                   14                                         MUC5B                                                                                                                                                          0.933
+      top_K   20.0            15                   15                                                                                                                                                                                                        1.000
+      top_K   30.0            19                   15                                                                                                                                                          LY6D, SERPINB5, SPRR1B, SPRR2D                0.789
+      top_K   50.0            32                   15                                               BNC1, KRT16, LASS3, LGALS7, LOC642587, LY6D, MAGEA4, MUC16, S100A7A, SERPINB3, SERPINB4, SERPINB5, SPRR1A, SPRR1B, SPRR2D, TRIM29, XAGE1D                0.469
+
+=== 3. Ranks of the baseline core genes over 50 resamples (of 20530 genes) ===
+     gene  median_rank  best_rank  worst_rank  share_in_top20_of_50
+   CALML3            1          1           3                  1.00
+     KRT5            2          1           3                  1.00
+     DSG3            3          2           4                  1.00
+    KRT6A            4          3           8                  1.00
+     DSC3            5          4          12                  1.00
+    KRT6B            7          5          17                  1.00
+    KRT14            8          4          17                  1.00
+   S100A7            8          4          16                  1.00
+    KRT6C            8          5          15                  1.00
+    CLCA2           10          5          14                  1.00
+    GSTM1           11          4          29                  0.96
+    KRT13           12          7          17                  1.00
+SERPINB13           13         10          19                  1.00
+   SPRR2A           14          9          27                  0.94
+    MUC5B           15          8          30                  0.86
+
+=== 4. Pairwise Jaccard index of the top-20 lists over 50 resamples ===
+mean 0.684, median 0.667, min 0.429, max 0.905

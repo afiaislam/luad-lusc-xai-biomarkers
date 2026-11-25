@@ -1,0 +1,9 @@
+,TCGA,GSE37745
+genes_tested,15,13
+pooled p<0.05 (original method),11/15,1/13
+pooled FDR<0.05,10/15,0/13
+LUAD-only p<0.05,4/15,1/13
+LUSC-only p<0.05,1/15,2/13
+histology-adjusted p<0.05,2/15,2/13
+histology-adjusted FDR<0.05,0/15,1/13
+genes adjusted FDR<0.05,none,S100A7

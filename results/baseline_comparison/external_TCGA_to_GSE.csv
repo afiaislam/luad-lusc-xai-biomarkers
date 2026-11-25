@@ -1,0 +1,4 @@
+features,n_genes,Accuracy,AUC,F1,Balanced_Acc,Acc_95CI,AUC_95CI
+IHC-4,4,0.9709,0.9884,0.9624,0.9707,0.9419-0.9942,0.9713-0.9987
+Core-13,13,0.9535,0.9763,0.9412,0.9565,0.9186-0.9826,0.9487-0.9964
+All genes (from external-validation notebook),common genes,0.9535,0.9911,,,,

@@ -1,0 +1,14 @@
+gene,GSE_SHAP_rank,GSE_stability_pct,GSE_core_stable,in_top_1pct
+KRT6A,1,100.0,True,True
+CLCA2,2,100.0,True,True
+KRT5,4,100.0,True,True
+DSC3,7,100.0,True,True
+SERPINB13,9,100.0,True,True
+S100A7,15,90.0,True,True
+KRT6B,24,0.0,False,True
+KRT13,29,0.0,False,True
+DSG3,40,10.0,False,True
+MUC5B,181,0.0,False,True
+KRT14,277,0.0,False,False
+CALML3,2095,0.0,False,False
+GSTM1,3440,0.0,False,False

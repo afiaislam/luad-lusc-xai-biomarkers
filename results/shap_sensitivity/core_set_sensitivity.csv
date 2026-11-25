@@ -1,0 +1,17 @@
+setting,value,n_core_genes,baseline_genes_kept,dropped,added,jaccard_vs_baseline
+threshold,0.5,19,15,,"LY6D, SPRR1B, SPRR2D, XAGE1D",0.789
+threshold,0.6,17,15,,"LY6D, SPRR2D",0.882
+threshold,0.7,16,15,,SPRR2D,0.938
+threshold,0.8,15,15,,,1.0
+threshold,0.9,14,14,MUC5B,,0.933
+threshold,1.0,12,12,"GSTM1, MUC5B, SPRR2A",,0.8
+resamples_R,10.0,16,15,,LY6D,0.938
+resamples_R,20.0,15,15,,,1.0
+resamples_R,30.0,15,15,,,1.0
+resamples_R,40.0,15,15,,,1.0
+resamples_R,50.0,15,15,,,1.0
+top_K,10.0,9,9,"CLCA2, GSTM1, KRT13, MUC5B, SERPINB13, SPRR2A",,0.6
+top_K,15.0,14,14,MUC5B,,0.933
+top_K,20.0,15,15,,,1.0
+top_K,30.0,19,15,,"LY6D, SERPINB5, SPRR1B, SPRR2D",0.789
+top_K,50.0,32,15,,"BNC1, KRT16, LASS3, LGALS7, LOC642587, LY6D, MAGEA4, MUC16, S100A7A, SERPINB3, SERPINB4, SERPINB5, SPRR1A, SPRR1B, SPRR2D, TRIM29, XAGE1D",0.469

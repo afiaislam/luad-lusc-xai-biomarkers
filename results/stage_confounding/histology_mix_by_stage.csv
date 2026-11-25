@@ -1,0 +1,3 @@
+cohort,chi2_p_histology_vs_stage,LUSC_%_stage_I,LUSC_%_stage_II,LUSC_%_stage_III,LUSC_%_stage_IV,LUSC_%_stage_III/IV
+TCGA,0.00037655087936487537,47.0,57.0,50.0,21.2,
+GSE37745,0.7145705673152338,36.4,44.1,,,39.3

@@ -1,0 +1,24 @@
+# Large TCGA expression matrices (download instructions in README)
+data/LUAD.csv
+data/LUSC.csv
+
+# Test run, not part of the reported results
+results/model_selection_tcga_quick/
+
+# One-time helper used to build this layout
+restructure_repo.py
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
